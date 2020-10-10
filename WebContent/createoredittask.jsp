@@ -30,11 +30,11 @@
   </div>
 </nav>
 	</header>
-<body>
-    <div class="container col-md-6 .offset-md-3" style="margin-top: 40px;">
-    <div>
+	<body>
+   	 <div class="container col-md-6 .offset-md-3" style="margin-top: 40px;">
+   	 <div>
         <h3>Crie uma nova tarefa</h3>
-    </div>
+   		 </div>
         <form action='TaskController.do' method='post'>
             <div class="form-group">
                 <input type="name" class="form-control" name="name" placeholder="Nome" value="${task.name}">
@@ -43,11 +43,14 @@
                 <input type="text" class="form-control" name="description" placeholder="Descrição" value="${task.description}">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="type" placeholder="Tipo" value="${task.type}">
+                <input type="text" class="form-control" name="typeTask" placeholder="Tipo" value="${task.typeTask}">
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="taskStatus" placeholder="Status da tarefa" value="${taskStatus.type}">
-            </div>
+  				<select class="form-control" name="taskStatus">
+  					
+ 			  		 <option value="planejada">Planejada</option>
+  			 		 <option value="andamento">Em andamento</option>
+  			 		 <option value="concluida">Concluída</option>
+ 				 </select>
             <div class="form-group">
                 <input type="hidden" class="form-control" name="dateCreated"  value="${task.dateCreated}">
             </div>
@@ -58,7 +61,8 @@
                 <input type="text" class="form-control" name="assignedTo" placeholder="Atribuido para" value="${task.assignedTo}">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="dateConclusion" placeholder="Data de conclusão" value="${task.dateConclusion}">
+            	<label for="">Data de Conclusão</label>
+                <input type="date" class="form-control" name="dateConclusion" placeholder="Data de conclusão" value="${task.dateConclusion}">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
